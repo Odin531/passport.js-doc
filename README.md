@@ -23,7 +23,8 @@ make sure that the following is installed:
 1. Clone the reposetry:
 
     ``` bash
-    git clone https://github.com/Odin531/passport.js-doc.git ```
+    git clone https://github.com/Odin531/passport.js-doc.git
+    ```
 
 2. change the dir:
 
@@ -40,7 +41,7 @@ make sure that the following is installed:
 ## explaination
 
     ``` javascript 
-   const express = require("express");
+    const express = require("express");
     const path = require("path");
     const session = require("express-session");
     const PgSession = require('connect-pg-simple')(session);
@@ -49,33 +50,34 @@ make sure that the following is installed:
     const strategy = require("passport-local").Strategy;
     const verify = require("./lib/verify");
     ```
-    - session : this is used to creat a session .
-    - pgSession : this is used to connect the session to the postgres.
-    - Pool : used to query the database which is writen in postgres.
-    - passport : to use the passport lib for the authentication.
-    - strategy : to deploy the local strategy.
-    - verify : there is a function that wheter the given credential is correct or not.
-
-    ``` javascript
+- session : this is used to creat a session .
+- pgSession : this is used to connect the session to the postgres.
+- Pool : used to query the database which is writen in postgres.
+- passport : to use the passport lib for the authentication.
+- strategy : to deploy the local strategy.
+- verify : there is a function that wheter the given credential is correct or not.
+    
+    ```markdown
+    ```javascript
     const strat = new strategy(verify);
     passport.use(strat);
     ```
-    the first line initialize a new strategy which is local and tell to follow the rule for the verify function which we defeind localy.
+the first line initialize a new strategy which is local and tell to follow the rule for the verify function which we defeind localy.
 
-    the second line initialize the passport module to use the recently created strategy.
+the second line initialize the passport module to use the recently created strategy.
 
-   ``` javascript
-
+   
+    ```javascript
     app.use(passport.initialize());
     app.use(passport.session());
+    ```
 
-    ``` 
 
-    these  are the global middleware used to initialize the passport.js for the perticular server and a passport session that keep track whether the user is logged in or not.
+these  are the global middleware used to initialize the passport.js for the perticular server and a passport session that keep track whether the user is logged in or not.
 
-```
+
 # File Structure
-
+```
 WEBSITE/
 ├── lib/
 │   ├── genPassword.js
@@ -92,5 +94,5 @@ WEBSITE/
 ├── package.json
 ├── README.md
 └── server.js         
-
+```
 # there is much more to update which will be done later.....
